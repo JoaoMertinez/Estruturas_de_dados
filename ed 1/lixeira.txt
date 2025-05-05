@@ -1,0 +1,78 @@
+//Pedi apenas para ele organizar porem vi algumas mudanças, bom conferir
+/*void inserirAlocDinamicaCHAT(TpBiblioteca biblioteca, TpDescritor *desc, TpAutores *listaA) {
+    // Criar uma nova caixa de livro
+    TpLivro *ncL = novaCaixaLivro(biblioteca.titulo_livro, biblioteca.ano, biblioteca.paginas);
+
+    int i = 0, j = 0, num = 1;
+    char sobrenome[TF], nome[TF];
+
+    // Contar o número de autores
+    while (biblioteca.autores[i] != '\0') {
+        if (biblioteca.autores[i] == ';')
+            num++;
+        i++;
+    }
+
+    // Processar cada autor
+    while (num > 0) {
+        int cont = 0;
+
+        // Extrair sobrenome
+        while (biblioteca.autores[j] != ',' && biblioteca.autores[j] != '\0') {
+            sobrenome[cont] = biblioteca.autores[j];
+            j++;
+            cont++;
+        }
+        sobrenome[cont] = '\0';
+        j++;
+        cont = 0;
+
+        // Extrair nome
+        while (biblioteca.autores[j] != ';' && biblioteca.autores[j] != '\0') {
+            nome[cont] = biblioteca.autores[j];
+            j++;
+            cont++;
+        }
+        nome[cont] = '\0';
+
+        // Procurar o autor na lista de autores
+        TpAutores *autorAtual = listaA;
+        while (autorAtual != NULL && (strcmp(autorAtual->sobrenome, sobrenome) != 0 || strcmp(autorAtual->nome, nome) != 0)) {
+            autorAtual = autorAtual->prox;
+        }
+
+        // Criar nova caixa de autor e adicionar ao livro
+        TpLista_autor *ncLA = novaCaixaListaAutor();
+        ncLA->autor = autorAtual;
+
+        if (ncL->pAutor == NULL) {
+            ncL->pAutor = ncLA;
+        } else {
+            TpLista_autor *temp = ncL->pAutor;
+            while (temp->prox != NULL) {
+                temp = temp->prox;
+            }
+            temp->prox = ncLA;
+        }
+
+        j++;
+        num--;
+    }
+
+    // Atualizar a lista de editoras no descritor
+    TpEditoras *auxEditora = desc->inicio;
+    while (auxEditora != NULL && strcmp(auxEditora->editora, biblioteca.editora) != 0) {
+        auxEditora = auxEditora->prox;
+    }
+    
+    if (auxEditora == NULL) {
+        // Criar nova caixa de editoras e adicionar ao descritor
+        TpEditoras *ncE = novaCaixaEditoras(biblioteca.editora);
+        ncE->prox = desc->inicio;
+        desc->inicio = ncE;
+        auxEditora = ncE;  // Atualizar auxEditora para o novo nodo
+    }
+
+    // Inserir o livro na lista de livros da editora
+    inserirLivro(auxEditora, ncL);
+}*/

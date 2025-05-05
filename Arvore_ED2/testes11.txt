@@ -1,0 +1,128 @@
+*/
+#include<stdio.h>
+
+
+void insereABB(Tree **raiz, int info)
+{
+    Tree *aux,*ant;
+    if(*raiz==NULL)
+        *raiz = CriNoAB(info);
+    else
+    {
+        aux = *raiz;
+        while(aux!=NULL)
+        {
+            ant = aux;
+            
+            if(info < aux->info)
+                aux = aux->esq;
+            else
+               aux = aux->dir; 
+        }
+        
+        if(info<ant->info)
+            ant->esq = CriNoAB(info);
+        else
+           ant->dir = CriNoAB(info); 
+    }
+}
+
+void insereABBR(Tree **raiz,int info)
+{
+    if(*raiz==NULL)
+        *raiz = CriaNoAB(info);
+    else
+        if(info < (*raiz)->info)
+            insereABBR(&(*raiz)->esq,info);
+        else 
+            insereABBR(&(*raiz)->dir),info;
+}
+
+void buscaABBrefIT(Tree *raiz, int info, Tree **pos)
+{
+    Tree *aux, *ant;
+    
+    if(raiz->info==info)
+        *pos = raiz;
+    else
+    {
+        aux = raiz;
+        while(aux!=NULL)//tenho que lembrar que o aux vai ate chegar no null
+        {
+            ant = aux;
+            if(info < aux->info)
+                aux = aux->esq;
+            else
+                aux = aux->dir;
+        }
+        
+        *pos = ant;
+    }
+}
+
+void buscaABBretIT(Tree *raiz, int info)
+{
+    Tree *aux, *ant, *pos;
+    
+    if(raiz->info==info)
+        pos = raiz;
+    else
+    {
+        aux = raiz;
+        while(aux!=NULL)//tenho que lembrar que o aux vai ate chegar no null
+        {
+            ant = aux;
+            if(info < aux->info)
+                aux = aux->esq;
+            else
+                aux = aux->dir;
+        }
+        
+        pos = ant;
+    }
+    return pos;
+}
+
+void buscaABBrefIT(Tree *raiz, int info, Tree **pos)
+{
+    Tree *aux, *ant;
+    
+    if(raiz->info==info)
+        *pos = raiz;
+    else
+    {
+        aux = raiz;
+        while(aux!=NULL)//tenho que lembrar que o aux vai ate chegar no null
+        {
+            ant = aux;
+            if(info < aux->info)
+                aux = aux->esq;
+            else
+                aux = aux->dir;
+        }
+        
+        *pos = ant;
+    }
+}
+
+void buscaProfunRefIT(Tree *raiz, int info, Tree **pos)
+{
+    Tree *aux, *ant;
+    
+    if(raiz->info==info)
+        *pos = raiz;
+    else
+    {
+        aux = raiz;
+        while(aux!=NULL)//tenho que lembrar que o aux vai ate chegar no null
+        {
+            ant = aux;
+            if(info < aux->info)
+                aux = aux->esq;
+            else
+                aux = aux->dir;
+        }
+        
+        *pos = ant;
+    }
+}

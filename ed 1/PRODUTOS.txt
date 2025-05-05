@@ -1,0 +1,5 @@
+4;macarrao;joao
+2;feijao;roberto
+1;farinha;ana
+3;arroz;juca
+5;fuba;marcos
